@@ -1,9 +1,7 @@
 #!/bin/bash
-if [ "adb start-server"="-bash: adb: command not found" ]; then
-    {   
+if [ $(dpkg-query -W -f='${Status}' adb 2>/dev/null | grep -c "ok installed") -eq 0 ]; then    
     echo "Please install adb first."
     exit 1 
-    }
 fi
 echo "Enter IP address of the watch:"
 read watch_IP
@@ -11,16 +9,24 @@ watch_IP="$watch_IP:5555"
 stop=0
 # Connecting to watch
 while [ 0 == $stop ]
-do
-    if [ "adb connect $watch_IP"="already connected to $watch_IP" ]
+do  
+    if [ "(adb connect $watch_IP)"="already connected to $watch_IP" ]
     then
-        echo "Connected to watch"
-        stop=1
+        {
+        echo "Checking connection"
+        if [ $(adb shell | grep "error") -eq 1]
+            adb kill-server
+            adb start-server
+        else
+            stop=1
+        fi
+        }
     else
         adb connect $watch_IP
         echo "Please accept prompt on watch"
-        sleep 1
-    fi
+        sleep 2
+        
+    fi 
 done
 
 # Bloat removal part
