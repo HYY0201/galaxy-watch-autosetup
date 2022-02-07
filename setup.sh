@@ -1,7 +1,9 @@
 #!/bin/bash
 if [ "adb start-server"="-bash: adb: command not found" ]; then
+    {   
     echo "Please install adb first."
-    exit 0
+    exit 1 
+    }
 fi
 echo "Enter IP address of the watch:"
 read watch_IP
