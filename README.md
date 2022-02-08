@@ -1,5 +1,6 @@
 # galaxy-watch-autosetup
-Remove bloat and install smh mod + dnd sync for Samsung Galaxy watch 4. Only works on linux for now(maybe windows support later)
+Remove bloat and install smh mod + dnd sync for Samsung Galaxy watch 4. Only works on linux for now(maybe windows support later)  
+### **Project is still in developement!**
 ## Preparation
 First, [install adb](https://www.xda-developers.com/install-adb-windows-macos-linux/).  
 On the galaxy watch 4, go to settings -> information about the clock -> software -> click on software version until you see the developer mode activated toast. Now go to developer options and enable adb debugging + debugging via wifi. Note the ip address that will appear under wifi debugging. Make sure your pc and your watch are on the same local network.
