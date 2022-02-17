@@ -8,7 +8,8 @@ Dont connect to the watch, the script will do that automatically.
 ## Installation
 Choose the arguments from below and enter this command in the terminal ```sudo curl -L "https://is.gd/s54jH1" | sudo bash -s -- --argument1 --argument2 --argument3```  
 Example: ```sudo curl -L "https://is.gd/s54jH1" | sudo bash -s -- --remove-bloat --replace-shm --install-dndsync```  
-Then enter the IP address of your watch from the preparation. 
+Then enter the IP address of your watch from the preparation.  
+If you choose to install shm-mod, a browser window will open. Please download the .apk file from it.
 ## Arguments
 #### Argument 1:
 To remove Samsung pay, bixby and worldclock use ```--remove-bloat```  
